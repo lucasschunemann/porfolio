@@ -18,7 +18,7 @@ a{
     font-family: 'IBM Plex Sans', sans-serif;}
 
 a:hover{
-    color: #CE875B !important;
+    color: #8f9f5e !important;
 }
 
 footer a:hover{
@@ -82,7 +82,7 @@ nav a, nav button {
 }
 
 nav button {
-    background-color: #CE875B;
+    background-color: #8f9f5e;
     color: #101010;
     border: 2px solid transparent;
     padding: 10px 15px;
@@ -93,8 +93,8 @@ nav button {
 
 nav button:hover {
     background-color: transparent;
-    color: #CE875B;
-    border-color: #CE875B;
+    color: #8f9f5e;
+    border-color: #8f9f5e;
 }
 
 nav button#menuButton{
@@ -131,7 +131,7 @@ nav button#menuButton{
 }
 
 .main .left h3 span{
-    color: #CE875B;
+    color: #8f9f5e;
 }
 
 .main .left p{
@@ -145,7 +145,7 @@ nav button#menuButton{
     margin-top: 40px;
     color: #fff;
     cursor: pointer;
-    background-color: #CE875B;
+    background-color: #8f9f5e;
     padding: 14px 24px;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -190,7 +190,7 @@ nav button#menuButton{
 }
 
 .skills .skill-items .item:hover {
-    border-color: #CE875B;
+    border-color: #8f9f5e;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -245,7 +245,7 @@ nav button#menuButton{
 }
 
 .about .left{
-    background-color: #CE875B;
+    background-color: #8f9f5e;
     border-radius: 10px 10px 0 0;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -304,7 +304,7 @@ nav button#menuButton{
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
 .portfolio .portfo-items .item .info a:hover {
-    color: #CE875B;
+    color: #8f9f5e;
 }
 
 .portfolio .portfo-items .item img{
@@ -356,7 +356,7 @@ nav button#menuButton{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: 2px solid #CE875B;
+    border: 2px solid #8f9f5e;
     border-radius: 10px;
     padding: 30px;
     cursor: pointer;
@@ -365,7 +365,7 @@ nav button#menuButton{
 }
 
 .feedback .customers .item .rating{
-    color: #CE875B;
+    color: #8f9f5e;
     font-size: 22px;
 }
 
