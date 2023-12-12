@@ -51,6 +51,25 @@ nav{
     z-index: 1000;
 }
 
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #8f9f5e;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 nav .logo,
 footer .logo{
     display: flex;
@@ -105,13 +124,13 @@ nav button#menuButton{
     padding: 7px;
 }
 
-.main{
-    background-color: #191919;
+.main {
     padding: 90px 85px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    background: #191919;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -121,16 +140,27 @@ nav button#menuButton{
     align-items: start;
 }
 
-.main .left h3{
+.main .left h3 {
     margin-top: 10px;
     font-weight: bold;
     color: #F8F5F3;
     font-size: 48px;
     line-height: 1.2;
-
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.main .left h3 span{
+
+.main .left h3:hover:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 100%;
+    background: #8f9f5e;
+}
+
+.main .left h3 span {
     color: #8f9f5e;
 }
 
@@ -143,22 +173,35 @@ nav button#menuButton{
 
 .main .left button{
     margin-top: 40px;
-    color: #fff;
+    color: #101010;
+    background-image: linear-gradient(45deg, #8f9f5e, #F8F5F3);
     cursor: pointer;
     background-color: #8f9f5e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 14px 24px;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    
 }
 
 .main .left button:hover, .main .left button:focus {
     background-color: #fff;
     color: #101010;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
 
 .main .right img{
-    width: 500px;
+    width: 670px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+
+.main:hover .right img {
+    transform: scale(1.05) translateX(10px);
 }
 
 .skills{
@@ -225,7 +268,7 @@ nav button#menuButton{
     margin-top: 20px;
     font-size: 14px;
     line-height: 22px;
-    color: #1c1e53;
+    color: #000000;
 }
 
 .about{
@@ -283,26 +326,39 @@ nav button#menuButton{
     font-size: 26px;
 }
 
+.portfolio .header .info h3 {
+    font-size: 28px; /* Aumente o tamanho da fonte para mais destaque */
+    margin-bottom: 10px; /* Espaçamento */
+}
+
+.portfolio .header .info h5 {
+    color: #8f9f5e; /* Cor para destaque */
+}
+
 .portfolio .portfo-items{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.portfolio .portfo-items .item{
+.portfolio .portfo-items .item {
     width: 30%;
     background-color: #1f1f1f;
     border-radius: 10px;
     border-bottom: 4px solid transparent;
     cursor: pointer;
     box-shadow: 0 5px 32px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+
 }
 
-.portfolio .portfo-items .item:hover{
-    border-color: #006B6A;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+.portfolio .portfo-items .item:hover {
+    transform: scale(1.05); /* Aumento sutil de escala */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra mais proeminente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .portfolio .portfo-items .item .info a:hover {
     color: #8f9f5e;
 }
@@ -312,7 +368,8 @@ nav button#menuButton{
     height: 240px;
     object-fit: cover;
     object-position: top;
-    border-radius: 10px 10px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio .portfo-items .item .info{
@@ -320,6 +377,7 @@ nav button#menuButton{
     flex-direction: column;
     gap: 14px;
     padding: 20px 32px 42px;
+    padding-bottom: 20px;
 }
 
 .portfolio .portfo-items .item .info p{
@@ -327,15 +385,58 @@ nav button#menuButton{
     color: #F8F5F3;
 }
 
-.portfolio .portfo-items .item .info a{
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-color: #006B6A;
+.portfolio .portfo-items .item .info a {
+    background-color: #8f9f5e;
+    color: #101010;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .portfolio .portfo-items .item .info a i{
     margin-left: 2px;
     font-size: 16px;
+}
+
+.item-info {
+    background-color: #1f1f1f; /* Cor de fundo harmonizada */
+    color: #F8F5F3; /* Cor do texto */
+    padding: 0px 15px; /* Padding inicial */
+    height: 0;
+
+    overflow: hidden; /* Oculta o conteúdo */
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.item-info h4, .item-info p {
+    opacity: 0; /* Inicia com o texto oculto */
+    transition: opacity 0.3s ease 0.3s; /* Transição do texto após o container */
+}
+
+.item:hover .item-info {
+    padding: 15px 15px; /* Padding ao passar o mouse */
+    height: 70px; /* Altura auto para mostrar todo o conteúdo */
+}
+
+.item:hover .item-info h4, .item:hover .item-info p {
+    opacity: 1; /* Mostra o texto ao passar o mouse */
+}
+
+.portfolio .portfo-items .item .info a:hover {
+    background-color: #F8F5F3;
+    color: #101010;
+}
+
+.info h4 {
+    font-size: 18px;
+    color: #8f9f5e;
+    font-weight: bold;
+}
+
+.info p {
+    font-size: 14px;
+    color: #F8F5F3;
+    line-height: 1.5;
 }
 
 .feedback{
