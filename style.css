@@ -463,7 +463,7 @@ nav button#menuButton{
 
 .info p {
     font-size: 14px;
-    color: #F8F5F3;
+    color: #000000;
     line-height: 1.5;
 }
 
@@ -526,8 +526,9 @@ nav button#menuButton{
     font-weight: bold;
 }
 
-.feedback .customers .item .user p{
+.feedback .customers .item .user .info p{
     font-size: 16px;
+    color: #000;
 }
 
 footer{
