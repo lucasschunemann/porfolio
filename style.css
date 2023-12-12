@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
 html{
@@ -171,6 +172,7 @@ nav button#menuButton{
     line-height: 1.5;
 }
 
+
 .main .left button{
     margin-top: 40px;
     color: #101010;
@@ -205,8 +207,16 @@ nav button#menuButton{
 }
 
 .skills{
-    padding: 110px 85px 0;
+    padding: 110px 85px 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: #f0f7f4;
 }
+
+
 
 .skills h3,
 .about .right h3,
@@ -223,34 +233,31 @@ nav button#menuButton{
 }
 
 .skills .skill-items .item{
-    background-color: #F8F5F3;
+    background-color: #fff;
     width: 25%;
     border-radius: 10px;
     padding: 32px;
     border-bottom: 4px solid transparent;
     cursor: pointer;
+    text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .skills .skill-items .item:hover {
     border-color: #8f9f5e;
+    transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .skills .skill-items .item .icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F8F5F3;
-    width: 46px;
-    height: 46px;
-    border-radius: 10px;
-    margin-bottom: 22px;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    font-size: 40px;
+    color: #8f9f5e;
+    margin-bottom: 15px;
 }
 
 .skills .skill-items .item .icon i{
-    font-size: 26px;
+    font-size: 35px;
     color: #006b6a;
 }
 
@@ -271,38 +278,59 @@ nav button#menuButton{
     color: #000000;
 }
 
-.about{
+.about {
     padding: 110px;
     display: flex;
     align-items: center;
+    position: relative; /* Para posicionar elementos absolutamente dentro */
     gap: 60px;
+    background: url(/assets/background2.gif) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-.abtme p{
-    background-color: #D1F4C9;
-    color: #101010;
+.about i {
+    font-size: 20px; /* Ajuste o tamanho */
+    margin-right: 5px;
+    color: #8f9f5e; /* Escolha a cor */
 }
 
 .about h5{
-    color: #101010;
+    color: #ffffff;
 }
 
-.about .left{
-    background-color: #8f9f5e;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+.about .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-.about .left img{
-    width: 440px;
-    height: auto;
+.about .left img {
+    max-width: 90%;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #8f9f5e; /* Moldura pixelizada */
 }
 
-.about .right p{
-    font-size: 16px;
-    margin-top: 30px;
-    line-height: 1.4;
+.about .right {
+    flex: 2;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o texto */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    border-radius: 10px;
+    z-index: 2; /* Garante que o texto esteja acima da imagem */
+}
+
+.about .right h3, .about .right p {
+    color: #f0f7f4; /* Cor clara para o texto */
+    text-shadow: 2px 2px 2px #000; /* Sombra de texto para legibilidade */
+}
+
+.about .right p {
+    margin-top: 15px;
+    line-height: 1.6;
 }
 
 .portfolio{
